@@ -24,23 +24,23 @@ def predict_pcos(age, weight, height, bmi, fast_food, exercise, pregnant, skin_d
 
 # Define the input and output interfaces
 inputs = [
-    gr.inputs.Number(label="Age (years)"),
-    gr.inputs.Number(label="Weight (Kg)"),
-    gr.inputs.Number(label="Height (Cm)"),
-    gr.inputs.Number(label="BMI"),
-    gr.inputs.Radio(choices=[0, 1], type="index", label="Fast Food (Y/N)"),
-    gr.inputs.Radio(choices=[0, 1], type="index", label="Reg. Exercise (Y/N)"),
-    gr.inputs.Radio(choices=[0, 1], type="index", label="Pregnant (Y/N)"),
-    gr.inputs.Radio(choices=[0, 1], type="index", label="Skin Darkening (Y/N)"),
-    gr.inputs.Radio(choices=[0, 1], type="index", label="Hair Growth (Y/N)"),
-    gr.inputs.Radio(choices=[0, 1], type="index", label="Weight Gain (Y/N)"),
-    gr.inputs.Radio(choices=[0, 1], type="index", label="Pimples (Y/N)"),
-    gr.inputs.Radio(choices=[0, 1], type="index", label="Hair Loss (Y/N)"),
-    gr.inputs.Number(label="No. of abortions"),
-    gr.inputs.Number(label="Cycle length (days)")
+    gr.Number(label="Age (years)"),
+    gr.Number(label="Weight (Kg)"),
+    gr.Number(label="Height (Cm)"),
+    gr.Number(label="BMI"),
+    gr.Radio(choices=[0, 1], label="Fast Food (Y/N)"),
+    gr.Radio(choices=[0, 1], label="Reg. Exercise (Y/N)"),
+    gr.Radio(choices=[0, 1], label="Pregnant (Y/N)"),
+    gr.Radio(choices=[0, 1], label="Skin Darkening (Y/N)"),
+    gr.Radio(choices=[0, 1], label="Hair Growth (Y/N)"),
+    gr.Radio(choices=[0, 1], label="Weight Gain (Y/N)"),
+    gr.Radio(choices=[0, 1], label="Pimples (Y/N)"),
+    gr.Radio(choices=[0, 1], label="Hair Loss (Y/N)"),
+    gr.Number(label="No. of abortions"),
+    gr.Number(label="Cycle length (days)")
 ]
 
-outputs = gr.outputs.Textbox(label="PCOS Prediction")
+outputs = gr.Textbox(label="PCOS Prediction")
 
 # Create the Gradio interface
 demo = gr.Interface(fn=predict_pcos, inputs=inputs, outputs=outputs)
