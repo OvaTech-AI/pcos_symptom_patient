@@ -45,6 +45,6 @@ outputs = gr.Textbox(label="PCOS Prediction")
 # Create the Gradio interface
 demo = gr.Interface(fn=predict_pcos, inputs=inputs, outputs=outputs)
 
-# Launch the app
+# Launch the app with share=True to get a public link
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(share=True)
