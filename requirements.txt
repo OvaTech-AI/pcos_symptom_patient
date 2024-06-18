@@ -1,5 +1,5 @@
 pandas
-numpy
+numpy==1.21.6
 matplotlib
 seaborn
 scikit-learn==1.2.2
